@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새로운 한국형 주거: 캥거루족 가구를 위한 디자인</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe4e9 100%);
+            min-height: 100vh;
+        }
+
+        .back-button {
+            border: 2px solid #ff1493;
+            background: white;
+            color: #ff1493;
+            padding: 12px 32px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-button:hover {
+            background: #ff1493;
+            color: white;
+        }
+
+        .info-page {
+            padding: 60px 40px 100px 40px;
+            min-height: 100vh;
+        }
+
+        .info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .info-title {
+            font-size: 56px;
+            font-weight: 900;
+            color: #000;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .info-subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .section h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ff1493;
+            margin-bottom: 24px;
+        }
+
+        .section p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .chart-wrapper {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .chart-wrapper-large {
+            height: 500px;
+        }
+
+        .conflict-diagram {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            max-width: 700px;
+            margin: 40px auto;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .circle-parents {
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 20, 147, 0.3);
+            border: 3px solid #ff1493;
+            left: 10%;
+            top: 10%;
+            z-index: 10;
+            font-weight: 700;
+            color: white;
+            font-size: 18px;
+        }
+
+        .circle-children {
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 182, 193, 0.7);
+            border: 3px solid #ff69b4;
+            right: 10%;
+            top: 10%;
+            z-index: 10;
+            font-weight: 700;
+            color: white;
+            font-size: 18px;
+        }
+
+        .circle-conflict {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 215, 0, 0.8);
+            border: 3px solid #ffd700;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            font-weight: 700;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .flow-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .flow-card {
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .flow-card-yellow {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #333;
+        }
+
+        .flow-card-pink {
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+            color: white;
+        }
+
+        .flow-card-green {
+            background: linear-gradient(135deg, #ff69b4 0%, #ffb6c1 100%);
+            color: white;
+        }
+
+        .flow-card-red {
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+            color: white;
+        }
+
+        .flow-card h4 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .flow-card p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .flow-arrow {
+            font-size: 36px;
+            font-weight: 900;
+            color: #ff1493;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .principle-card {
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .principle-card-green {
+            background: linear-gradient(135deg, #ffb6c1 0%, #ffc0cb 100%);
+            color: #333;
+        }
+
+        .principle-card-pink {
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+            color: white;
+        }
+
+        .principle-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .principle-card .principle-title {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .principle-card p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        @media (max-width: 968px) {
+            .info-title {
+                font-size: 36px;
+            }
+
+            .info-subtitle {
+                font-size: 18px;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .section h3 {
+                font-size: 24px;
+            }
+
+            .chart-wrapper {
+                height: 300px;
+            }
+
+            .chart-wrapper-large {
+                height: 400px;
+            }
+
+            .conflict-diagram {
+                height: 300px;
+            }
+
+            .circle-parents,
+            .circle-children {
+                width: 180px;
+                height: 180px;
+                font-size: 14px;
+            }
+
+            .circle-conflict {
+                width: 100px;
+                height: 100px;
+                font-size: 12px;
+            }
+
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-page {
+                padding: 40px 20px 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="info-page">
+        <div class="info-container">
+            <div class="info-header">
+                <h1 class="info-title">새로운 한국형 주거</h1>
+                <h2 class="info-subtitle">'캥거루족 가구'를 위한 평면 설계</h2>
+                <p style="max-width: 800px; margin: 0 auto 40px; font-size: 16px; color: #555; line-height: 1.8;">
+                    포스트 팬데믹 시대는 우리의 집을 사무실, 체육관, 학교로 만들었습니다. 이러한 변화는 '캥거루족 가구'와 같은 새로운 가족 구조와 맞물려 아파트 평면의 근본적인 재고를 요구하고 있습니다.
+                </p>
+                <a href="index.html" class="back-button">← 메인으로 돌아가기</a>
+            </div>
+
+            <div class="grid-2">
+                <div class="section">
+                    <h3>1. 캥거루족 가구의 증가</h3>
+                    <p>
+                        '캥거루족 가구'는 성인 자녀가 높은 주거 비용, 고용 불안 등의 경제적 요인으로 부모와 계속 동거하는 가구를 의미합니다. 이는 일시적 현상이 아닌, 중요하고 성장하는 인구 집단입니다.
+                    </p>
+                    <p>
+                        이 차트는 30-40대 미혼 인구 중 부모와 동거하는 비율이 꾸준히 증가하고 있음을 보여주며, 이러한 다세대 역학을 충족하는 주거 솔루션의 시급성을 강조합니다.
+                    </p>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-wrapper">
+                        <canvas id="kangarooTrendChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 style="text-align: center;">2. 핵심 과제: 상충하는 요구</h3>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                    이러한 동거 형태는 독특한 공간적 과제를 야기합니다: '독립'과 '연결'에 대한 동시적인 요구입니다. 부모와 성인 자녀 세대 모두 사생활을 원하면서도, 동시에 가족 간의 공유 시간과 지원을 갈망합니다.
+                </p>
+                <div class="conflict-diagram">
+                    <div class="circle circle-parents">
+                        부모 세대 요구:<br>
+                        • 사생활 보호<br>
+                        • 가족 유대
+                    </div>
+                    <div class="circle circle-children">
+                        성인 자녀 요구:<br>
+                        • 독립성<br>
+                        • 경제적/정서적 지원
+                    </div>
+                    <div class="circle circle-conflict">
+                        공간적<br>
+                        갈등<br>
+                        영역
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="chart-container" style="order: 2;">
+                    <div class="chart-wrapper chart-wrapper-large">
+                        <canvas id="specializedElementsChart"></canvas>
+                    </div>
+                </div>
+                <div class="section" style="order: 1;">
+                    <h3>3. 브랜드 아파트의 대응</h3>
+                    <p>
+                        이에 대응하여, 주요 아파트 브랜드들은 표준화된 평면에서 벗어나고 있습니다. 2020년 이후 12개의 최신 평면도를 분석한 결과, 특화된 설계 요소에 중점을 둔 경향이 나타났습니다.
+                    </p>
+                    <p>
+                        이 차트에서 보듯이, 수납공간(팬트리 등) 강화와 유연한 '알파룸'(취미 또는 업무용) 생성이 가장 일반적인 특화 요소입니다. 이는 단위 세대 내 맞춤화 및 활용도 극대화라는 분명한 추세를 보여줍니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="section">
+                    <h3>4. 새로운 평면 유형의 등장</h3>
+                    <p>
+                        이러한 특화 요소들은 무작위가 아닙니다. 이들은 결합하여 4가지 뚜렷한 유형의 평면을 형성합니다. 각 유형은 현대 주택을 적응시키는 각기 다른 전략을 나타냅니다.
+                    </p>
+                    <p>
+                        '기본 확장형'(수납 강화)과 '기능 강화형'(주방 개선 등)이 일반적이지만, '세대 분리형' 유형은 핵심 혁신입니다. 분석 대상 평면의 1/4을 차지하는 이 유형은 다세대 동거 문제를 해결하기 위해 특별히 설계되었습니다.
+                    </p>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-wrapper">
+                        <canvas id="typologyDonutChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 style="text-align: center;">5. 미래: 공존을 위한 평면</h3>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                    '세대 분리형' 평면은 캥거루족 가구를 위한 가장 유망한 방향입니다. 이는 미래 아파트 설계를 위한 명확한 청사진을 제공하는 두 가지 핵심 원칙에 기반합니다.
+                </p>
+                <div class="flow-section">
+                    <div class="flow-card flow-card-yellow">
+                        <h4>THE NEED: 캥거루족 가구</h4>
+                        <p>사생활과 유대감의 균형</p>
+                    </div>
+                    <div class="flow-arrow">▼</div>
+                    <div class="flow-card flow-card-pink">
+                        <h4>THE SOLUTION: "세대 분리형" 평면</h4>
+                        <p>예: 분리된 현관, 미니 주방, 듀얼 마스터 스위트</p>
+                    </div>
+                    <div class="flow-arrow">▼</div>
+                    <div class="principles-grid">
+                        <div class="principle-card principle-card-green">
+                            <h4>원칙 1:</h4>
+                            <div class="principle-title">선택적 분리</div>
+                            <p>(공간은 사적이거나 공유될 수 있음)</p>
+                        </div>
+                        <div class="principle-card principle-card-pink">
+                            <h4>원칙 2:</h4>
+                            <div class="principle-title">기능적 유연성</div>
+                            <p>(변화하는 요구에 따라 공간 적응)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>
+                    인포그래픽 출처: 최세령, 김지은, "라이프스타일 변화에 따른 국내 브랜드 아파트 단위세대 특화설계 요소 연구 - 캥거루족 가구를 중심으로".
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const chartColors = {
+                pink: '#ff1493',
+                lightPink: '#ff69b4',
+                palePink: '#ffb6c1',
+                lightPalePink: '#ffc0cb',
+                yellow: '#ffd700',
+                gray: '#666'
+            };
+
+            const multiLineTooltipCallback = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            const kangarooTrendCtx = document.getElementById('kangarooTrendChart');
+            if (kangarooTrendCtx) {
+                new Chart(kangarooTrendCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['2010', '2015', '2020'],
+                        datasets: [{
+                            label: '30-40대 미혼 인구 중 부모 동거 비율',
+                            data: [48.8, 52.1, 54.7],
+                            borderColor: chartColors.pink,
+                            backgroundColor: 'rgba(255, 20, 147, 0.2)',
+                            fill: true,
+                            tension: 0.1,
+                            borderWidth: 3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        ...multiLineTooltipCallback,
+                        plugins: {
+                            ...multiLineTooltipCallback.plugins,
+                            legend: {
+                                display: true,
+                                position: 'bottom',
+                                labels: {
+                                    font: {
+                                        family: "'Noto Sans KR', sans-serif",
+                                        size: 14
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: false,
+                                min: 40,
+                                max: 60,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%';
+                                    },
+                                    font: {
+                                        family: "'Noto Sans KR', sans-serif"
+                                    }
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    font: {
+                                        family: "'Noto Sans KR', sans-serif"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const specializedElementsCtx = document.getElementById('specializedElementsChart');
+            if (specializedElementsCtx) {
+                new Chart(specializedElementsCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: [
+                            '수납 강화 (팬트리 등)', 
+                            ['알파룸/취미실', '(서재 등)'], 
+                            '주방/식당 강화', 
+                            '현관 위생 (클린룸)', 
+                            '가변형 벽체', 
+                            '안방 강화'
+                        ],
+                        datasets: [{
+                            label: '분석 평면 내 적용 빈도 (%)',
+                            data: [92, 75, 83, 67, 58, 71],
+                            backgroundColor: [
+                                chartColors.pink,
+                                chartColors.lightPink,
+                                chartColors.palePink,
+                                chartColors.lightPalePink,
+                                chartColors.pink,
+                                chartColors.lightPink,
+                            ],
+                            borderColor: 'rgba(255, 255, 255, 0)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        indexAxis: 'y',
+                        ...multiLineTooltipCallback,
+                        plugins: {
+                            ...multiLineTooltipCallback.plugins,
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%';
+                                    },
+                                    font: {
+                                        family: "'Noto Sans KR', sans-serif"
+                                    }
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    font: {
+                                        family: "'Noto Sans KR', sans-serif"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const typologyDonutCtx = document.getElementById('typologyDonutChart');
+            if (typologyDonutCtx) {
+                new Chart(typologyDonutCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: [
+                            '기본 확장형', 
+                            '기능 강화형', 
+                            '공간 다양화형', 
+                            ['세대 분리형', '(독립 공간)']
+                        ],
+                        datasets: [{
+                            label: '평면 유형 분포',
+                            data: [30, 25, 20, 25],
+                            backgroundColor: [
+                                chartColors.pink,
+                                chartColors.lightPink,
+                                chartColors.palePink,
+                                chartColors.lightPalePink
+                            ],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        ...multiLineTooltipCallback,
+                        plugins: {
+                            ...multiLineTooltipCallback.plugins,
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    font: {
+                                        family: "'Noto Sans KR', sans-serif",
+                                        size: 14
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+        })();
+    </script>
+</body>
+</html>
