@@ -38,8 +38,15 @@
 
         .menu-icon {
             font-size: 28px;
-            cursor: pointer;
             color: #333;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .menu-icon:hover {
+            background: rgba(0,0,0,0.05);
         }
 
         .logo {
@@ -1252,7 +1259,7 @@
         </div>
 
         <header>
-            <div class="menu-icon">☰</div>
+            <a class="menu-icon" href="menu2.html" aria-label="메뉴 열기">☰</a>
             <div class="logo">
                 Estée Lauder 성수 팝업 스토어
                 <span class="pink-ribbon-icon">🎀</span>
@@ -2074,6 +2081,14 @@
                 if (e.key === 'ArrowLeft') changeScene('prev');
                 if (e.key === 'ArrowRight') changeScene('next');
                 if (e.key === 'Escape') closeInfo();
+            }
+        });
+
+        window.addEventListener('load', () => {
+            if (window.location.hash === '#location') {
+                showLocation();
+            } else if (window.location.hash === '#reservation') {
+                showReservation();
             }
         });
     </script>
