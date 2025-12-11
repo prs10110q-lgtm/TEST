@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estée Lauder 성수 팝업 스토어</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -33,7 +35,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
         .menu-icon {
@@ -46,7 +48,7 @@
         }
 
         .menu-icon:hover {
-            background: rgba(0,0,0,0.05);
+            background: rgba(0, 0, 0, 0.05);
         }
 
         .logo {
@@ -184,7 +186,7 @@
             position: absolute;
             background: white;
             border-radius: 50%;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
         }
 
         .circle-main {
@@ -197,7 +199,7 @@
         .visual-image {
             position: absolute;
             border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
 
         .img-lamp {
@@ -282,7 +284,7 @@
             height: 500px;
             object-fit: cover;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
         .about-text {
@@ -316,7 +318,7 @@
             background: white;
             padding: 40px 30px;
             border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             text-align: center;
             transition: transform 0.3s;
         }
@@ -347,7 +349,7 @@
             background: white;
             padding: 60px;
             border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             margin-bottom: 60px;
         }
 
@@ -468,7 +470,7 @@
             background: white;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(255,20,147,0.15);
+            box-shadow: 0 10px 40px rgba(255, 20, 147, 0.15);
             max-width: 900px;
             width: 100%;
         }
@@ -635,7 +637,7 @@
             background: white;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s;
             cursor: pointer;
         }
@@ -705,7 +707,7 @@
             border-radius: 24px;
             padding: 60px;
             margin-bottom: 40px;
-            box-shadow: 0 5px 25px rgba(255,20,147,0.1);
+            box-shadow: 0 5px 25px rgba(255, 20, 147, 0.1);
         }
 
         .campaign-section h2 {
@@ -733,7 +735,7 @@
             background: white;
             border-radius: 24px;
             padding: 50px;
-            box-shadow: 0 5px 25px rgba(255,20,147,0.1);
+            box-shadow: 0 5px 25px rgba(255, 20, 147, 0.1);
         }
 
         .popup-location-section h3 {
@@ -790,7 +792,7 @@
             background: white;
             border-radius: 24px;
             padding: 60px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
         }
 
         .reservation-step {
@@ -956,7 +958,7 @@
             background: white;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
             margin-bottom: 40px;
         }
 
@@ -981,7 +983,7 @@
             background: white;
             border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
         }
 
         .location-card h3 {
@@ -1030,7 +1032,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .campaign-section, .popup-location-section {
+            .campaign-section,
+            .popup-location-section {
                 padding: 30px;
             }
         }
@@ -1055,13 +1058,13 @@
             right: 0;
             z-index: 100;
             padding: 30px 40px;
-            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
         }
 
         .vr-back-btn {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             color: white;
             padding: 12px 28px;
             font-size: 14px;
@@ -1074,8 +1077,8 @@
         }
 
         .vr-back-btn:hover {
-            background: rgba(255,255,255,0.3);
-            border-color: rgba(255,255,255,0.5);
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         .vr-container {
@@ -1103,7 +1106,7 @@
             position: absolute;
             width: 60px;
             height: 60px;
-            background: rgba(255,20,147,0.3);
+            background: rgba(255, 20, 147, 0.3);
             border: 3px solid #ff1493;
             border-radius: 50%;
             cursor: pointer;
@@ -1118,15 +1121,18 @@
 
         .vr-hotspot:hover {
             transform: scale(1.2);
-            background: rgba(255,20,147,0.6);
+            background: rgba(255, 20, 147, 0.6);
         }
 
         @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(255,20,147,0.7);
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 20, 147, 0.7);
             }
+
             50% {
-                box-shadow: 0 0 0 20px rgba(255,20,147,0);
+                box-shadow: 0 0 0 20px rgba(255, 20, 147, 0);
             }
         }
 
@@ -1135,9 +1141,9 @@
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0,0,0,0.85);
+            background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,20,147,0.5);
+            border: 2px solid rgba(255, 20, 147, 0.5);
             border-radius: 20px;
             padding: 30px 40px;
             color: white;
@@ -1198,9 +1204,9 @@
         .vr-nav-btn {
             width: 50px;
             height: 50px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             color: white;
             font-size: 20px;
@@ -1212,7 +1218,7 @@
         }
 
         .vr-nav-btn:hover {
-            background: rgba(255,20,147,0.5);
+            background: rgba(255, 20, 147, 0.5);
             border-color: #ff1493;
         }
 
@@ -1221,9 +1227,9 @@
             top: 100px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,20,147,0.3);
+            border: 2px solid rgba(255, 20, 147, 0.3);
             border-radius: 30px;
             padding: 15px 30px;
             color: white;
@@ -1252,6 +1258,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="main-page">
         <div class="notification-bar">
@@ -1266,7 +1273,7 @@
             </div>
             <div class="header-icons">
                 <span onclick="showProducts()" title="제품 검색">🔍</span>
-                <span onclick="window.location.href='INFO.html'" title="정보">👤</span>
+                <span onclick="window.location.href='INFO2.html'" title="정보">👤</span>
                 <span onclick="showGallery()" title="갤러리">🛒</span>
             </div>
         </header>
@@ -1290,20 +1297,20 @@
                 <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                     <button class="cta-button" onclick="showGallery()">LEARN MORE</button>
                     <button class="cta-button" onclick="showVR()" style="min-width: 160px;">VR 체험하기</button>
+                    <button class="cta-button" onclick="window.location.href='static_quiz.html'"
+                        style="min-width: 160px;">핑크리본 알기</button>
                 </div>
             </div>
 
             <div class="hero-visual">
                 <div class="visual-circle circle-main"></div>
-                <img class="visual-image img-lamp" 
-                     src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=400&h=300&fit=crop" 
-                     alt="조명">
-                <img class="visual-image img-woman" 
-                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&facepad=2" 
-                     alt="여성">
-                <img class="visual-image img-building" 
-                     src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&h=400&fit=crop" 
-                     alt="건물">
+                <img class="visual-image img-lamp"
+                    src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=400&h=300&fit=crop" alt="조명">
+                <img class="visual-image img-woman"
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&facepad=2"
+                    alt="여성">
+                <img class="visual-image img-building"
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&h=400&fit=crop" alt="건물">
             </div>
         </section>
     </div>
@@ -1318,11 +1325,15 @@
             </div>
 
             <div class="about-content">
-                <img class="about-image" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1200&h=800&fit=crop" alt="에스티 로더">
+                <img class="about-image"
+                    src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1200&h=800&fit=crop"
+                    alt="에스티 로더">
                 <div class="about-text">
                     <h3>뷰티의 미래를 만들어가는 브랜드</h3>
-                    <p>에스티 로더는 1946년 에스티 로더 부인에 의해 설립된 세계적인 프리미엄 뷰티 브랜드입니다. 혁신적인 스킨케어와 메이크업 제품으로 전 세계 여성들의 아름다움을 이끌어왔습니다.</p>
-                    <p>우리는 과학과 예술의 완벽한 조화를 통해 가장 효과적이고 럭셔리한 뷰티 솔루션을 제공합니다. 70년 이상의 역사를 통해 축적된 전문성과 혁신으로 뷰티 산업을 선도하고 있습니다.</p>
+                    <p>에스티 로더는 1946년 에스티 로더 부인에 의해 설립된 세계적인 프리미엄 뷰티 브랜드입니다. 혁신적인 스킨케어와 메이크업 제품으로 전 세계 여성들의 아름다움을
+                        이끌어왔습니다.</p>
+                    <p>우리는 과학과 예술의 완벽한 조화를 통해 가장 효과적이고 럭셔리한 뷰티 솔루션을 제공합니다. 70년 이상의 역사를 통해 축적된 전문성과 혁신으로 뷰티 산업을 선도하고
+                        있습니다.</p>
                     <p>에스티 로더는 단순히 제품을 판매하는 것이 아니라, 모든 여성이 자신의 아름다움을 발견하고 표현할 수 있도록 돕는 것을 목표로 합니다.</p>
                 </div>
             </div>
@@ -1398,7 +1409,8 @@
 
         <div class="products-grid">
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&h=600&fit=crop" alt="Advanced Night Repair">
+                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&h=600&fit=crop"
+                    alt="Advanced Night Repair">
                 <div class="product-info">
                     <div class="product-category">SKINCARE</div>
                     <div class="product-name">Advanced Night Repair</div>
@@ -1408,7 +1420,8 @@
             </div>
 
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=800&h=600&fit=crop" alt="Double Wear Foundation">
+                <img src="https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=800&h=600&fit=crop"
+                    alt="Double Wear Foundation">
                 <div class="product-info">
                     <div class="product-category">MAKEUP</div>
                     <div class="product-name">Double Wear Foundation</div>
@@ -1418,7 +1431,8 @@
             </div>
 
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=800&h=600&fit=crop" alt="Revitalizing Supreme+">
+                <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=800&h=600&fit=crop"
+                    alt="Revitalizing Supreme+">
                 <div class="product-info">
                     <div class="product-category">SKINCARE</div>
                     <div class="product-name">Revitalizing Supreme+</div>
@@ -1428,7 +1442,8 @@
             </div>
 
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1596704017254-9b121068ec31?w=800&h=600&fit=crop" alt="Pure Color Lipstick">
+                <img src="https://images.unsplash.com/photo-1596704017254-9b121068ec31?w=800&h=600&fit=crop"
+                    alt="Pure Color Lipstick">
                 <div class="product-info">
                     <div class="product-category">MAKEUP</div>
                     <div class="product-name">Pure Color Lipstick</div>
@@ -1438,7 +1453,8 @@
             </div>
 
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&h=600&fit=crop" alt="Micro Essence">
+                <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&h=600&fit=crop"
+                    alt="Micro Essence">
                 <div class="product-info">
                     <div class="product-category">SKINCARE</div>
                     <div class="product-name">Micro Essence</div>
@@ -1448,7 +1464,8 @@
             </div>
 
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1590439471364-192aa70c0b53?w=800&h=600&fit=crop" alt="Beautiful Eyes">
+                <img src="https://images.unsplash.com/photo-1590439471364-192aa70c0b53?w=800&h=600&fit=crop"
+                    alt="Beautiful Eyes">
                 <div class="product-info">
                     <div class="product-category">SKINCARE</div>
                     <div class="product-name">Beautiful Eyes Cream</div>
@@ -1473,13 +1490,16 @@
                 <h2>핑크 리본 캠페인</h2>
                 <p>에스티 로더의 핑크 리본 캠페인은 1992년에 시작되어 전 세계적으로 유방암 인식 향상과 조기 검진의 중요성을 알리는 대표적인 사회공헌 활동입니다.</p>
                 <p>매년 10월 유방암 인식의 달을 맞아, 에스티 로더는 전 세계 여성들이 유방암에 대해 더 많이 알고, 조기 검진을 통해 생명을 구할 수 있도록 돕고 있습니다.</p>
-                <p>핑크 리본은 유방암과의 싸움에서 희망과 연대의 상징입니다. 작은 관심과 실천이 생명을 구할 수 있다는 메시지를 전하며, 전 세계 수백만 여성들에게 용기와 희망을 선사하고 있습니다.</p>
+                <p>핑크 리본은 유방암과의 싸움에서 희망과 연대의 상징입니다. 작은 관심과 실천이 생명을 구할 수 있다는 메시지를 전하며, 전 세계 수백만 여성들에게 용기와 희망을 선사하고 있습니다.
+                </p>
             </div>
 
             <div class="popup-location-section">
                 <h3>🏪 성수동 팝업 스토어</h3>
-                <p>에스티 로더가 서울 성수동에 특별한 핑크 리본 팝업 스토어를 오픈했습니다. 이 공간은 단순한 제품 판매를 넘어, 유방암 인식 향상과 여성 건강에 대한 메시지를 전하는 특별한 경험의 장입니다.</p>
-                <p>팝업 스토어에서는 에스티 로더의 대표 제품들을 체험할 수 있으며, 전문 뷰티 어드바이저의 1:1 맞춤 상담도 받으실 수 있습니다. 또한 방문객 여러분께는 핑크 리본 캠페인을 기념하는 특별한 사은품도 준비되어 있습니다.</p>
+                <p>에스티 로더가 서울 성수동에 특별한 핑크 리본 팝업 스토어를 오픈했습니다. 이 공간은 단순한 제품 판매를 넘어, 유방암 인식 향상과 여성 건강에 대한 메시지를 전하는 특별한 경험의
+                    장입니다.</p>
+                <p>팝업 스토어에서는 에스티 로더의 대표 제품들을 체험할 수 있으며, 전문 뷰티 어드바이저의 1:1 맞춤 상담도 받으실 수 있습니다. 또한 방문객 여러분께는 핑크 리본 캠페인을 기념하는
+                    특별한 사은품도 준비되어 있습니다.</p>
 
                 <div class="event-details">
                     <div class="detail-item">
@@ -1622,8 +1642,8 @@
 
         <div class="vr-container">
             <div class="vr-scene" id="vrScene">
-                <img class="vr-panorama" id="vrPanorama" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&h=1080&fit=crop" alt="VR Scene">
-                
+                <img class="vr-panorama" id="vrPanorama" src="el_popup_entrance.png" alt="VR Scene">
+
                 <!-- 핫스팟들 -->
                 <div class="vr-hotspot" style="top: 50%; left: 30%;" onclick="showInfo('entrance')" title="메인 입구">
                     🪟
@@ -1666,7 +1686,7 @@
             <div class="gallery-slider" id="slider">
                 <div class="gallery-slide">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=800&fit=crop" alt="스토어 전경">
+                        <img src="el_popup_entrance.png" alt="스토어 전경">
                         <div class="gallery-caption">
                             <h3>🪟 메인 입구</h3>
                             <p>핑크 리본 캠페인의 의미를 담은 따뜻한 환영의 공간입니다</p>
@@ -1676,7 +1696,7 @@
 
                 <div class="gallery-slide">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?w=1200&h=800&fit=crop" alt="제품 진열">
+                        <img src="el_popup_products.png" alt="제품 진열">
                         <div class="gallery-caption">
                             <h3>💄 제품 체험 공간</h3>
                             <p>Estée Lauder의 프리미엄 제품들을 직접 체험하고 테스트해보세요</p>
@@ -1686,7 +1706,7 @@
 
                 <div class="gallery-slide">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=1200&h=800&fit=crop" alt="뷰티 존">
+                        <img src="el_popup_consulting.png" alt="뷰티 존">
                         <div class="gallery-caption">
                             <h3>✨ 뷰티 컨설팅 존</h3>
                             <p>전문 뷰티 어드바이저와 함께하는 1:1 맞춤 피부 진단 및 상담</p>
@@ -1696,7 +1716,7 @@
 
                 <div class="gallery-slide">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=1200&h=800&fit=crop" alt="포토존">
+                        <img src="el_popup_photo_zone.png" alt="포토존">
                         <div class="gallery-caption">
                             <h3>📸 인스타그램 포토존</h3>
                             <p>핑크 리본과 함께하는 특별한 순간을 사진으로 남겨보세요</p>
@@ -1706,7 +1726,7 @@
 
                 <div class="gallery-slide">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1200&h=800&fit=crop" alt="휴식 공간">
+                        <img src="el_popup_lounge.png" alt="휴식 공간">
                         <div class="gallery-caption">
                             <h3>☕ 라운지 공간</h3>
                             <p>편안하게 쉬어가며 브랜드의 스토리를 경험할 수 있는 힐링 존</p>
@@ -1716,7 +1736,7 @@
 
                 <div class="gallery-slide">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1200&h=800&fit=crop" alt="이벤트 공간">
+                        <img src="el_popup_event.png" alt="이벤트 공간">
                         <div class="gallery-caption">
                             <h3>🎁 스페셜 이벤트 존</h3>
                             <p>한정판 제품과 독점 혜택을 만나볼 수 있는 특별한 공간입니다</p>
@@ -1744,7 +1764,7 @@
         const vrScenes = [
             {
                 name: '메인 입구',
-                image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&h=1080&fit=crop',
+                image: 'el_popup_entrance.png',
                 hotspots: [
                     { icon: '🪟', top: '50%', left: '30%', id: 'entrance' },
                     { icon: '💄', top: '40%', right: '35%', id: 'products' },
@@ -1754,7 +1774,7 @@
             },
             {
                 name: '제품 체험 공간',
-                image: 'https://images.unsplash.com/photo-1560343090-f0409e92791a?w=1920&h=1080&fit=crop',
+                image: 'el_popup_products.png',
                 hotspots: [
                     { icon: '💄', top: '45%', left: '35%', id: 'products' },
                     { icon: '🎁', top: '50%', right: '30%', id: 'gift' },
@@ -1763,7 +1783,7 @@
             },
             {
                 name: '뷰티 컨설팅 존',
-                image: 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=1920&h=1080&fit=crop',
+                image: 'el_popup_consulting.png',
                 hotspots: [
                     { icon: '✨', top: '48%', left: '40%', id: 'consulting' },
                     { icon: '💆', top: '45%', right: '35%', id: 'skincare' },
@@ -1772,7 +1792,7 @@
             },
             {
                 name: '인스타그램 포토존',
-                image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=1920&h=1080&fit=crop',
+                image: 'el_popup_photo_zone.png',
                 hotspots: [
                     { icon: '📸', top: '50%', left: '45%', id: 'photo' },
                     { icon: '🎀', top: '42%', right: '38%', id: 'ribbon' },
@@ -1896,26 +1916,26 @@
             const scene = vrScenes[currentVRScene];
             document.getElementById('sceneIndicator').textContent = scene.name;
             document.getElementById('vrPanorama').src = scene.image;
-            
+
             // 핫스팟 업데이트
             const vrScene = document.getElementById('vrScene');
             const existingHotspots = vrScene.querySelectorAll('.vr-hotspot');
             existingHotspots.forEach(h => h.remove());
-            
+
             scene.hotspots.forEach(hotspot => {
                 const hotspotEl = document.createElement('div');
                 hotspotEl.className = 'vr-hotspot';
                 hotspotEl.innerHTML = hotspot.icon;
                 hotspotEl.onclick = () => showInfo(hotspot.id);
-                
+
                 if (hotspot.top) hotspotEl.style.top = hotspot.top;
                 if (hotspot.bottom) hotspotEl.style.bottom = hotspot.bottom;
                 if (hotspot.left) hotspotEl.style.left = hotspot.left;
                 if (hotspot.right) hotspotEl.style.right = hotspot.right;
-                
+
                 vrScene.appendChild(hotspotEl);
             });
-            
+
             closeInfo();
         }
 
@@ -1957,7 +1977,7 @@
         function updateSlider() {
             const slider = document.getElementById('slider');
             slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
+
             const dots = document.querySelectorAll('.dot');
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
@@ -1993,17 +2013,17 @@
         function createDateButtons() {
             const dateGrid = document.getElementById('dateGrid');
             dateGrid.innerHTML = '';
-            
+
             const startDate = new Date(2025, 9, 31);
             const endDate = new Date(2025, 10, 9);
-            
+
             for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
                 const dateBtn = document.createElement('button');
                 dateBtn.className = 'date-btn';
                 const month = d.getMonth() + 1;
                 const day = d.getDate();
                 const weekday = ['일', '월', '화', '수', '목', '금', '토'][d.getDay()];
-                
+
                 dateBtn.innerHTML = `<div style="font-size:12px;color:#999;margin-bottom:5px;">${month}/${day}</div><div style="font-weight:700;">${weekday}</div>`;
                 dateBtn.onclick = () => selectDate(dateBtn, `${month}/${day}(${weekday})`);
                 dateGrid.appendChild(dateBtn);
@@ -2013,9 +2033,9 @@
         function createTimeButtons() {
             const timeGrid = document.getElementById('timeGrid');
             timeGrid.innerHTML = '';
-            
+
             const times = ['11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'];
-            
+
             times.forEach(time => {
                 const timeBtn = document.createElement('button');
                 timeBtn.className = 'time-btn';
@@ -2050,7 +2070,7 @@
             const name = document.getElementById('nameInput').value.trim();
             const phone = document.getElementById('phoneInput').value.trim();
             const email = document.getElementById('emailInput').value.trim();
-            
+
             const isComplete = selectedDate && selectedTime && name && phone && email;
             document.getElementById('submitBtn').disabled = !isComplete;
         }
@@ -2059,9 +2079,9 @@
             const name = document.getElementById('nameInput').value;
             const phone = document.getElementById('phoneInput').value;
             const email = document.getElementById('emailInput').value;
-            
+
             alert(`예약이 완료되었습니다!\n\n날짜: ${selectedDate}\n시간: ${selectedTime}\n이름: ${name}\n연락처: ${phone}\n이메일: ${email}\n\n예약 확인 메일이 발송됩니다.`);
-            
+
             document.querySelectorAll('.date-btn, .time-btn').forEach(btn => btn.classList.remove('selected'));
             document.getElementById('nameInput').value = '';
             document.getElementById('phoneInput').value = '';
@@ -2093,4 +2113,5 @@
         });
     </script>
 </body>
+
 </html>
